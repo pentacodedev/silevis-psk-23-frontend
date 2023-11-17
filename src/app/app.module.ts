@@ -10,6 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HomeComponent } from './pages/home/home.component';
 import { SetupComponent } from './pages/setup/setup.component';
 import { ApiService } from './services/api.service';
+import { LoginComponent } from './pages/login/login.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -23,7 +24,8 @@ function ApiServiceFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HomeComponent,
-    SetupComponent
+    SetupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

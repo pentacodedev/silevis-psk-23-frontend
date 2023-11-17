@@ -6,7 +6,7 @@ import { UsosDto } from '../models/usos.dto';
   providedIn: 'root'
 })
 export class ApiService {
-  apiRoot: string = "https://localhost:5998";
+  apiRoot: string = "http://localhost:5997";
   constructor(private http: HttpClient) {
   }
 
