@@ -1,1 +1,53 @@
-<p>setup works!</p>
+<h1 class="p-3 text-center">setup works!</h1>
+<div class="d-flex justify-content-center">
+<form class="form d-flex flex-column gap-4">
+    <div class="form-group">
+      <label>Nazwisko</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Imię</label>
+      <input type="text" class="form-control">
+      <label>Nr.Indeksu</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Podaj typ studiów</label>
+        <div class="form-check">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" name="typ_st" type="radio" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                stacjonarne
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" name="typ_st" type="radio">
+                <label class="form-check-label" for="exampleRadios1">
+                niestacjonarne
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Stopień studiów</label>
+            <select class="form-control">
+              <option>Semestr 1</option>
+              <option>Semestr 2</option>
+            </select>
+          </div>
+        <div class="form-group">
+            <label>Semestr studiów</label>
+            <select class="form-control" >
+              <option>Semestr 1</option>
+              <option>Semestr 2</option>
+              <option>Semestr 3</option>
+              <option>Semestr 4</option>
+              <option>Semestr 5</option>
+              <option>Semestr 6</option>
+              <option>Semestr 7</option>
+            </select>
+          </div>
+        
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

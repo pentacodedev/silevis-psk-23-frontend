@@ -5,18 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HomeComponent } from './pages/home/home.component';
 import { SetupComponent } from './pages/setup/setup.component';
-import { ApiService } from './services/api.service';
+import { DocumentsComponent } from './pages/documents/documents.component';
 import { LoginComponent } from './pages/login/login.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
-}
-function ApiServiceFactory(http: HttpClient) {
-  return new ApiService(http);
 }
 
 
@@ -25,7 +22,8 @@ function ApiServiceFactory(http: HttpClient) {
     AppComponent,
     HomeComponent,
     SetupComponent,
-    LoginComponent
+    LoginComponent,
+    DocumentsComponent
   ],
   imports: [
     BrowserModule,
