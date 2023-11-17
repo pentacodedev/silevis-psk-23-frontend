@@ -6,4 +6,5 @@
     <li *ngFor="let programme of usosData?.studentProgrammes">{{programme.programme}}</li>
   </ul>
   <p>{{usosData | json}}</p>
+  <button class="btn" (click)="logout()">wyloguj</button>
 </div>
