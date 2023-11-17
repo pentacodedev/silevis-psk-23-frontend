@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HomeComponent } from './pages/home/home.component';
 import { SetupComponent } from './pages/setup/setup.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -19,7 +20,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HomeComponent,
-    SetupComponent
+    SetupComponent,
+    DocumentsComponent
   ],
   imports: [
     BrowserModule,
