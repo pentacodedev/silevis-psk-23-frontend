@@ -8,7 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   constructor(private translateService: TranslateService) {
-    translateService.use('pl');
+    let lang = localStorage.getItem('lang') ?? 'pl';
+    translateService.use(lang);
   }
 
 }

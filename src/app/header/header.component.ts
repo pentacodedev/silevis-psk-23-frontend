@@ -15,21 +15,14 @@ export class HeaderComponent implements OnInit {
   constructor(private translateService: TranslateService, private userService: UserService, private router: Router) {
   }
 
-  getLanguage() {
-    if (this.translateService.currentLang == "pl") {
-      return "Polski";
-    }
-    else {
-      return "English";
-    }
-  }
-
   toggleLanguage() {
     if (this.translateService.currentLang == "pl") {
       this.translateService.use("en");
+      localStorage.setItem('lang', 'en');
     }
     else {
       this.translateService.use("pl");
+      localStorage.setItem('lang', 'pl');
     }
   }
 
@@ -37,11 +30,11 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.userService.logout();
     this.currentUser = undefined;
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/login');
   }
 
   login() {
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/');
   }
 
   ngOnInit(): void {

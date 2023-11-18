@@ -8,8 +8,8 @@
       </p>
 
       <div class="col-md-3 text-end">
-        <button class="btn btn-outline-secondary me-2" (click)="toggleLanguage()">{{getLanguage()}}</button>
-        <button *ngIf="currentUser" type="button" (click)="logout()" class="btn btn-outline-primary me-2">Logout</button>
+        <button class="btn btn-outline-secondary me-2" (click)="toggleLanguage()">{{'CURRENTLANGUAGE' | translate}}</button>
+    <button *ngIf="currentUser" type="button" (click)="logout()" class="btn btn-outline-primary me-2">{{'LOGOUT' | translate}}</button>
         <button *ngIf="!currentUser" type="button" (click)="login()" class="btn btn-outline-primary me-2">Login</button>
       </div>
     </header>

@@ -3,7 +3,6 @@ import { EMPTY, Observable, of } from 'rxjs';
 import { ApiService } from './api.service';
 import { UsosDto } from '../models/usos.dto';
 import { InternshipDto } from '../models/internship.dto';
-
 @Injectable({
   providedIn: 'root'
 })

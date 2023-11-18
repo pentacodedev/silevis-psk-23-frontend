@@ -5,6 +5,7 @@ import { InternshipDto } from '../models/internship.dto';
 import { TemplateDto } from '../models/template.dto';
 import fileSaver from 'file-saver';
 import { DomSanitizer } from '@angular/platform-browser';
+import { NewDateTicketDto } from '../models/new-date-ticket.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,11 @@ export class ApiService {
 
   putInternshipInfo(internship: InternshipDto) {
     return this.http.put(`${this.apiRoot}/internships`, internship)
+  }
+
+
+  sendInternshipNewDateTicket(ticket: NewDateTicketDto) {
+    return this.http.post(`${this.apiRoot}/NewDateTickets`, ticket);
   }
 
 
