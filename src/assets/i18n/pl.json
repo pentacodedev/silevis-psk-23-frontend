@@ -5,7 +5,7 @@
   "LOGIN": "Zaloguj się",
   "WELCOMEPRAKTYGON": "Witamy w Praktygonie!",
   "YOURPRACTICE": "Twoje praktyki",
-  "YOURAPPLICATIONS": "Twoja podania",
+  "YOURAPPLICATIONS": "Twoje podania",
   "APPLYTOCHANGETHEDATEOFTHEINTERSHIP": "Złóż podanie o zmianę terminu praktyki",
   "HAVEYOUPREPAREDTHISYET": "Czy już to przygotowałeś?",
   "TOTHEPRACTICEMANAGER":"Do kierownika praktyk:",
@@ -29,5 +29,6 @@
   "WHATISNEWDURATION": "Wybierz nowy okres",
   "STARTDATE": "Data początkowa",
   "ENDDATE": "Data końcowa",
-  "SUBMIT": "Wyślij"
+  "SUBMIT": "Wyślij",
+  "APPLYFORANINTERNSHIPPASS":"Złóż podanie o zaliczenie praktyki"
 }
