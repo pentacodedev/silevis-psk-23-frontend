@@ -1,15 +1,8 @@
 {
   "HELLOWORLD": "Hello, world!",
-
-  "Basic":{
-    "FirstName":"First Name",
-    "LastName":"Last name",
-    "IndexNo":"Index number",
-    "StudiesType":"Type of studies",
-    "StudyDegree":"Degree of study",
-    "Semester":"Semester",
-    "FullTime":"Full-time studies",
-    "PartTime":"Part-time studies"
-  }
+  "EMAIL": "E-mail address",
+  "PASSWORD": "Password",
+  "LOGIN": "Login",
+  "WELCOMEPRAKTYGON": "Welcome to Praktygon!"
 }
 

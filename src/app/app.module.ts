@@ -12,6 +12,10 @@ import { SetupComponent } from './pages/setup/setup.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
+import { AdminStudentCatalogComponent } from './pages/admin-student-catalog/admin-student-catalog.component';
+import { SubmitDateTicketComponent } from './pages/submit-date-ticket/submit-date-ticket.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -24,7 +28,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     SetupComponent,
     LoginComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    HeaderComponent,
+    AdminHomeComponent,
+    AdminStudentCatalogComponent,
+    SubmitDateTicketComponent
   ],
   imports: [
     BrowserModule,

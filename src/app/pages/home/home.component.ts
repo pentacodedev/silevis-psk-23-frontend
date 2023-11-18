@@ -10,14 +10,14 @@ import { InternshipDto } from '../../models/internship.dto';
 })
 export class HomeComponent implements OnInit {
   usosData?: UsosDto;
-  internships?: InternshipDto[];
+  internship?: InternshipDto;
 
   constructor(private userService: UserService) {
   }
 
   ngOnInit(): void {
     this.userService.getCurrentUser().subscribe(usos => this.usosData = usos);
-    this.userService.getUserInternships().subscribe(internships => this.internships = internships);
+    this.userService.getUserInternship().subscribe(internship => this.internship = internship);
   }
   logout() {
     this.userService.logout();

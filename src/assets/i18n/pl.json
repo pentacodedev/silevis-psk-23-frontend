@@ -1,16 +1,7 @@
 {
   "HELLOWORLD": "Witaj, świecie!",
-  
-    "Basic":{
-      "FirstName":"Imie",
-      "LastName":"Nazwisko",
-      "IndexNo":"Nr.Indeksu",
-      "StudiesType":"Typ studiów",
-      "StudyDegree":"Stopień studiów",
-      "Semester":"Semestr studiów",
-      "FullTime":"Studia stacjonarne",
-      "PartTime":"Studia niestacjonarne"
-    }
-  
-  
+  "EMAIL": "Adres e-mail",
+  "PASSWORD": "Hasło",
+  "LOGIN": "Zaloguj się",
+  "WELCOMEPRAKTYGON": "Witamy w Praktygonie!"
 }

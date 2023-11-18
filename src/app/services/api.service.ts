@@ -17,8 +17,8 @@ export class ApiService {
   }
 
 
-  getInternshipsForUser(email: string) {
+  getInternshipForUser(email: string) {
     email = email.replace("@", "%40");
-    return this.http.get<InternshipDto[]>(`${this.apiRoot}/Internships/for-student/${email}`);
+    return this.http.get<InternshipDto>(`${this.apiRoot}/Internships/for-student/${email}`);
   }
 }

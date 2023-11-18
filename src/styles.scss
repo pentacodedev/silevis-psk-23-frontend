@@ -3,11 +3,11 @@
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 
+$body-bg: #FFFFFF;
 $theme-colors : map-merge($theme-colors, (
 "primary" : #EF7A1B,
 ));
 
-$body-bg: #FFEDD5;
 
 
 @import "bootstrap/scss/bootstrap";

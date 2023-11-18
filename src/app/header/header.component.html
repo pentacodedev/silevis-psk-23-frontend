@@ -1,0 +1,15 @@
+<header class="d-flex p-3 flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-light text-decoration-none">
+        <img style="height: 5rem" src="/assets/logotyp-weaii-psk-1536x404.png" alt="weaii logo">
+      </a>
+
+      <p class="text-center col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+    {{currentUser?.firstName}} {{currentUser?.lastName}}
+      </p>
+
+      <div class="col-md-3 text-end">
+        <button *ngIf="currentUser" type="button" (click)="logout()" class="btn btn-outline-primary me-2">Logout</button>
+        <button *ngIf="!currentUser" type="button" (click)="login()" class="btn btn-outline-primary me-2">Login</button>
+      </div>
+    </header>
+

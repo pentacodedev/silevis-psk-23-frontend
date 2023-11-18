@@ -11,14 +11,14 @@ export class UserService {
 
 
   private currentUser$: Observable<UsosDto> = EMPTY;
-  private currentInternships$: Observable<InternshipDto[]> = EMPTY;
+  private currentInternship$: Observable<InternshipDto> = EMPTY;
 
 
 
   constructor(private api: ApiService) {
-    let internships = localStorage.getItem('userInternships');
+    let internships = localStorage.getItem('userInternship');
     if (internships != null) {
-      this.currentInternships$ = of(JSON.parse(internships));
+      this.currentInternship$ = of(JSON.parse(internships));
     }
 
     let storage = localStorage.getItem('user');
@@ -29,23 +29,23 @@ export class UserService {
 
   login(email: string) {
     this.currentUser$ = this.api.getUsosFromEmail(email);
-    this.currentInternships$ = this.api.getInternshipsForUser(email);
+    this.currentInternship$ = this.api.getInternshipForUser(email);
     this.currentUser$.subscribe(x => localStorage.setItem('user', JSON.stringify(x)));
-    this.currentInternships$.subscribe(x => localStorage.setItem('userInternships', JSON.stringify(x)))
+    this.currentInternship$.subscribe(x => localStorage.setItem('userInternship', JSON.stringify(x)))
     return this.currentUser$;
   }
 
   logout() {
     this.currentUser$ = EMPTY
-    this.currentInternships$ = EMPTY
+    this.currentInternship$ = EMPTY
     localStorage.removeItem('user');
-    localStorage.removeItem('userInternships');
+    localStorage.removeItem('userInternship');
   }
 
   getCurrentUser(): Observable<UsosDto> {
     return this.currentUser$;
   }
-  getUserInternships(): Observable<InternshipDto[]> {
-    return this.currentInternships$;
+  getUserInternship(): Observable<InternshipDto> {
+    return this.currentInternship$;
   }
 }

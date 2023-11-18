@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
+  }
+  ngOnInit(): void {
+    let router = this.router;
+    this.userService.getCurrentUser().subscribe(x=> router.navigateByUrl('/'))
   }
 
 
@@ -25,8 +29,16 @@ export class LoginComponent {
     let emailControl = this.form.get('email');
     let value = emailControl?.value;
     if(emailControl != null && emailControl.valid && value != null) {
-      this.userService.login(value);
-      this.router.navigateByUrl('/');
+      let router = this.router;
+      let form = this.form;
+      this.userService.login(value).subscribe({
+        next() {
+          router.navigateByUrl('/');
+        },
+        error() {
+          form.updateValueAndValidity();
+        }
+      });
     } else {
       this.form.updateValueAndValidity();
     }
