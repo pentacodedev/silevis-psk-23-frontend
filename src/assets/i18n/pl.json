@@ -3,5 +3,22 @@
   "EMAIL": "Adres e-mail",
   "PASSWORD": "Hasło",
   "LOGIN": "Zaloguj się",
-  "WELCOMEPRAKTYGON": "Witamy w Praktygonie!"
+  "WELCOMEPRAKTYGON": "Witamy w Praktygonie!",
+  "YOURPRACTICE": "Twoje praktyki",
+  "YOURAPPLICATIONS": "Twoja podania",
+  "APPLYTOCHANGETHEDATEOFTHEINTERSHIP": "Złóż podanie o zmianę terminu praktyki",
+  "HAVEYOUPREPARDEDTHISYET?": "Czy już to przygotowałeś?",
+  "TOTHEPRACTICEMANAGER:":"Do kierownika praktyk:",
+  "APPLICATIONFORTHEIMPLEMENTATION":"Podanie o realizację trzeciotygodniowej zgody na realizację praktyki studenckiej?",
+  "TOTHEDEANSOFFICE":"Do dziekanatu:",
+  "APPLICATIONFORTHEIMPLEMENTATIONOF":"Podanie o realizację trzeciotygodniowej zgody na realizację praktyki studenckiej? (jeden egzemplarz)",
+  "INFORMATIONCLAUSEONPERSONAL":"Klauzula informacyjna o danych osobowych (dwa egzemplarze)",
+  "APPLICATIONFORCREDIT":"Podanie o zaliczenie praktyk",
+  "DOWNLOAD":"Pobierz",
+  "DEADLINES":"Terminy",
+  "AGREEMENTONORGANIZATION":"Umowę o organizację praktyki studenta Politechniki Świętokrzyskie",
+  "ANINFORMATIONCLAUSECONCERING":"klauzulą informacyjną dotycząca przetwarzania przez Uczelnię danych osobowych",
+  "DECLARATIONOFKNOWLEDGE":"Oświadczenie o znajomości zasad odbywania praktyki",
+  "APPLICATIONFORCONSENT":"Podanie o wyrażenie zgody na realizację czterotygodniowej praktyki studenckiej",
+  "STUDENTREPORT":"Sprawozdanie z praktyki studenckiej"
 }

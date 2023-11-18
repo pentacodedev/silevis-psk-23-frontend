@@ -3,6 +3,24 @@
   "EMAIL": "E-mail address",
   "PASSWORD": "Password",
   "LOGIN": "Login",
-  "WELCOMEPRAKTYGON": "Welcome to Praktygon!"
+  "WELCOMEPRAKTYGON": "Welcome to Praktygon!",
+  "YOURPRACTICE": "Your Practice:",
+  "YOURAPPLICATIONS": "Your applications:",
+  "APPLYTOCHANGETHEDATEOFTHEINTERSHIP": "Apply to change the date of the internship",
+  "HAVEYOUPREPARDEDTHISYET?": "Have you prepared this yet?",
+  "TOTHEPRACTICEMANAGER:":"To the practice manager:",
+  "APPLICATIONFORTHEIMPLEMENTATION":"Podanie o realizację trzeciotygodniowej zgody na realizację praktyki studenckiej?",
+  "TOTHEDEANSOFFICE":"To the Dean's Office:",
+  "APPLICATIONFORTHEIMPLEMENTATIONOF":"Application for the implementation of a three-week consent for the implementation of a student internship? (one copy)",
+  "INFORMATIONCLAUSEONPERSONAL":"Information clause on personal data (two copies)",
+  "APPLICATIONFORCREDIT":"Application for credit for internships",
+  "DOWNLOAD":"Download",
+  "DEADLINES":"Dedlines:",
+  "AGREEMENTONORGANIZATION":"Agreement on organization of student internship at Świętokrzyska University of Technology",
+  "ANINFORMATIONCLAUSECONCERING":"an information clause concerning the processing of personal data by the University",
+  "DECLARATIONOFKNOWLEDGE":"Declaration of knowledge of the rules of the internship",
+  "APPLICATIONFORCONSENT":"Application for consent to a four-week student internship",
+  "STUDENTREPORT":"Student internship report"
+
 }
 
