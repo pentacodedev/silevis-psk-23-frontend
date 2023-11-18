@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
   }
 
   login() {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/login');
   }
 
   ngOnInit(): void {

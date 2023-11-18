@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private translateService: TranslateService) {
+  constructor(private router: Router, private translateService: TranslateService) {
     let lang = localStorage.getItem('lang') ?? 'pl';
     translateService.use(lang);
+
+    if(localStorage.getItem('user') == null) {
+      router.navigateByUrl('/login');
+    }
   }
 
 }
