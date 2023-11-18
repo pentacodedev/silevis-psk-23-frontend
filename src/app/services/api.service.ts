@@ -19,6 +19,10 @@ export class ApiService {
     return this.http.get<UsosDto>(`${this.apiRoot}/Usos?email=${email}`);
   }
 
+  putInternshipInfo(internship: InternshipDto) {
+    return this.http.put(`${this.apiRoot}/internships`, internship)
+  }
+
 
   getInternshipForUser(email: string) {
     email = email.replace("@", "%40");

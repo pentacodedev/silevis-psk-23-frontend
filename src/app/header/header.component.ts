@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { UsosDto } from '../models/usos.dto';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +12,27 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   currentUser?: UsosDto;
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private translateService: TranslateService, private userService: UserService, private router: Router) {
   }
+
+  getLanguage() {
+    if (this.translateService.currentLang == "pl") {
+      return "Polski";
+    }
+    else {
+      return "English";
+    }
+  }
+
+  toggleLanguage() {
+    if (this.translateService.currentLang == "pl") {
+      this.translateService.use("en");
+    }
+    else {
+      this.translateService.use("pl");
+    }
+  }
+
 
   logout(){
     this.userService.logout();

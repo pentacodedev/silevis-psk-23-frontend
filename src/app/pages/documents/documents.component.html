@@ -1,82 +1,64 @@
 <app-header></app-header>
 <div class="d-flex flex-column">
-    <div class="d-flex justify-content-end">
-        <button>Zalicz</button>
-        <button>Oblej</button>
+  <h2>Student</h2>
+  <table class="table" *ngIf="user != null">
+    <thead>
+      <tr>
+        <th scope="col">Numer indeksu</th>
+        <th scope="col">Imię i Nazwisko</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{user.studentNumber}}</td>
+        <td>{{user.firstName}} {{user.lastName}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Firma</h2>
+  <form class="form" (ngSubmit)="onSubmit()" [formGroup]="companyForm" *ngIf="internship != null">
+    <div class="form-group">
+      <label for="nameInput">Nazwa</label>
+      <input formControlName="companyName" class="form-control" type="text" id="nameInput">
     </div>
-    <p>Student</p>
-    <div class="d-flex">
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>Imie</p>
-            </div>
-        </div>
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>Nazwisko</p>
-            </div>
-        </div>
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>Nr.Albumu</p>
-            </div>
-        </div>
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>EMAIL</p>
-            </div>
-        </div>
+    <div class="form-group">
+      <label for="addressInput">Adres</label>
+      <input formControlName="companyAddress" class="form-control" type="text" id="addressInput">
     </div>
-    <p>Firma</p>
-    <div class="d-flex">
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>Nazwa</p>
-            </div>
-        </div>
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>Adres</p>
-            </div>
-        </div>
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>NIP</p>
-            </div>
-        </div>
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>KRS</p>
-            </div>
-        </div>
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>Region</p>
-            </div>
-        </div>
+    <div class="form-group">
+      <label for="nipInput">NIP</label>
+      <input formControlName="companyNipNumber" class="form-control" type="text" id="nipInput">
     </div>
-    <p>Osoba kontaktowa z firmy</p>
-    <div class="d-flex">
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>Imie</p>
-            </div>
-        </div>
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>Nazwisko</p>
-            </div>
-        </div>
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>Email</p>
-            </div>
-        </div>
-        <div class="card m-2">
-            <div class="card-body d-flex">
-              <p>Telefon</p>
-            </div>
-        </div>
+    <div class="form-group">
+      <label for="krsInput">KRS</label>
+      <input formControlName="companyKrsNumber" class="form-control" type="text" id="krsInput">
     </div>
-    <p>Złożone dokumenty</p>
+    <div class="form-group">
+      <label for="regonInput">Regon</label>
+      <input formControlName="companyRegonNumber" class="form-control" type="text" id="regonInput">
+    </div>
+    <h2>Osoba kontaktowa z firmy</h2>
+    <div class="form-group">
+      <label for="companyRepresentativeFirstnameInput">Imię</label>
+      <input formControlName="companyRepresentativeFirstname" class="form-control" type="text" id="companyRepresentativeFirstnameInput">
+    </div>
+    <div class="form-group">
+      <label for="companyRepresentativeSurnameInput">Nazwisko</label>
+      <input formControlName="companyRepresentativeSurname" class="form-control" type="text" id="companyRepresentativeSurnameInput">
+    </div>
+    <div class="form-group">
+      <label for="companyPhoneNumberInput">Numer telefonu</label>
+      <input formControlName="companyPhoneNumber" class="form-control" type="text" id="companyPhoneNumberInput">
+    </div>
+    <div class="form-group">
+      <label for="companyEmailInput">{{"EMAIL" | translate}}</label>
+      <input formControlName="companyEmail" class="form-control" type="text" id="companyEmailInput">
+    </div>
+    <button class="btn btn-primary" type="submit">Zapisz</button>
+  </form>
+
+  <h2>Złożone dokumenty</h2>
 </div>
