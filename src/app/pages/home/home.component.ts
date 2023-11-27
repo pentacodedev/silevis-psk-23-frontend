@@ -10,28 +10,35 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
   usosData?: UsosDto;
   internship?: InternshipDto;
 
-  constructor(private router: Router, private apiService: ApiService, private userService: UserService, private translateService: TranslateService) {
-  }
+  constructor(
+    private router: Router,
+    private apiService: ApiService,
+    private userService: UserService,
+    private translateService: TranslateService
+  ) {}
 
   toggleLanguage() {
-    if (this.translateService.currentLang == "pl") {
-      this.translateService.use("en");
-    }
-    else {
-      this.translateService.use("pl");
+    //Feedback maybe use service for this? I see second place where you are doing this
+    if (this.translateService.currentLang == 'pl') {
+      this.translateService.use('en');
+    } else {
+      this.translateService.use('pl');
     }
   }
 
-
   ngOnInit(): void {
-    this.userService.getCurrentUser().subscribe(usos => this.usosData = usos);
-    this.userService.getUserInternship().subscribe(internship => this.internship = internship);
+    this.userService
+      .getCurrentUser()
+      .subscribe((usos) => (this.usosData = usos));
+    this.userService
+      .getUserInternship()
+      .subscribe((internship) => (this.internship = internship));
   }
 
   logout() {
@@ -39,18 +46,14 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
-
   downloadForm1() {
-    if(this.internship == null || this.usosData == null) return;
+    if (this.internship == null || this.usosData == null) return;
     let template: TemplateDto = {
       internship: this.internship,
       user: this.usosData,
-      polish: this.translateService.currentLang == "pl",
+      polish: this.translateService.currentLang == 'pl',
     };
 
     this.apiService.getForm1File(template);
-
   }
-
-
 }

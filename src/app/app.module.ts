@@ -21,7 +21,11 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
-
+// Feedback You should use lazy loading for admin module
+// Feedback you should split your app into modules based on domain + shared module and core module
+// Feedback token interceptor should be in core module
+// Feedback clean and remove unnecessary code
+// Feedback translation should be nested object instead of plain strings
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     AdminHomeComponent,
     AdminStudentCatalogComponent,
-    SubmitDateTicketComponent
+    SubmitDateTicketComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,12 +48,12 @@ export function HttpLoaderFactory(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
-    NgbModule
+    NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

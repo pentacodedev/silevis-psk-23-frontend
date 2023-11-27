@@ -1,34 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, NonNullableFormBuilder, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  NonNullableFormBuilder,
+  Validators,
+} from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
-  }
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
     let router = this.router;
-    this.userService.getCurrentUser().subscribe(x=> router.navigateByUrl('/'))
+    //Feedback use authGuard
+    this.userService
+      .getCurrentUser()
+      .subscribe((x) => router.navigateByUrl('/'));
   }
 
-
-
-
-  form = this.formBuilder.group({email: new FormControl('')});
-
-
-
+  form = this.formBuilder.group({ email: new FormControl('') });
 
   onFormSubmit() {
     let emailControl = this.form.get('email');
     let value = emailControl?.value;
-    if(emailControl != null && emailControl.valid && value != null) {
+
+    //Feedback not to much logic in here ? :P
+    if (emailControl != null && emailControl.valid && value != null) {
       let router = this.router;
       let form = this.form;
       this.userService.login(value).subscribe({
@@ -37,11 +43,10 @@ export class LoginComponent implements OnInit {
         },
         error() {
           form.updateValueAndValidity();
-        }
+        },
       });
     } else {
       this.form.updateValueAndValidity();
     }
   }
 }
-

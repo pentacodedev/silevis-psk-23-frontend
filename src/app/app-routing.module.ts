@@ -29,9 +29,13 @@ const routes: Routes = [
     path: 'submit-date-ticket',
     component: SubmitDateTicketComponent,
   },
+  //Feedback use lazy loading
+  //https://angular.io/guide/lazy-loading-ngmodules
   {
     path: 'admin/home',
     component: AdminHomeComponent,
+    //Feedback use authGuard
+    //https://angular.io/api/router/CanActivate
   },
   {
     path: 'admin/student-catalog',
@@ -41,6 +45,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

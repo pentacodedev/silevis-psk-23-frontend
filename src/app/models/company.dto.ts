@@ -1,5 +1,6 @@
+//Feedback god job with this one but maybe it should be moved to domain folder? + not always is good to use dto in frontend components
 export interface CompanyDto {
-  id : number;
+  id: number;
   name: string;
   address: string;
   nipNumber: string;

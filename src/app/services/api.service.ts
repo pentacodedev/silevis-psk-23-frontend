@@ -8,56 +8,52 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { NewDateTicketDto } from '../models/new-date-ticket.dto';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
+//Feedback split this service into multiple services based on domain
 export class ApiService {
-  apiRoot: string = "http://localhost:5997";
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {
-  }
+  //Feedback use environment.ts for this or even better use proxy.conf.json :)
+  //https://angular.io/guide/build#proxying-to-a-backend-server
+  apiRoot: string = 'http://localhost:5997';
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
   getUsosFromEmail(email: string) {
-    email = email.replace("@", "%40");
+    //Feedback no need for this
+    email = email.replace('@', '%40');
     return this.http.get<UsosDto>(`${this.apiRoot}/Usos?email=${email}`);
   }
 
   putInternshipInfo(internship: InternshipDto) {
-    return this.http.put(`${this.apiRoot}/internships`, internship)
+    return this.http.put(`${this.apiRoot}/internships`, internship);
   }
-
 
   sendInternshipNewDateTicket(ticket: NewDateTicketDto) {
     return this.http.post(`${this.apiRoot}/NewDateTickets`, ticket);
   }
 
-
   getInternshipForUser(email: string) {
-    email = email.replace("@", "%40");
-    return this.http.get<InternshipDto>(`${this.apiRoot}/Internships/for-student/${email}`);
+    email = email.replace('@', '%40');
+    return this.http.get<InternshipDto>(
+      `${this.apiRoot}/Internships/for-student/${email}`
+    );
   }
 
   getForm1File(template: TemplateDto) {
-
-
     let response = fetch(`${this.apiRoot}/pdf/agreement`, {
-      method: "POST",
-      mode: "cors",
-      cache: "no-cache",
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
       headers: {
-        "Content-Type" :'application/json'
+        'Content-Type': 'application/json',
       },
-      redirect: "follow",
-      body: JSON.stringify(template)
+      redirect: 'follow',
+      body: JSON.stringify(template),
     });
-    response.then(x=> x.blob())
-    .then((blob)=>{
+    response
+      .then((x) => x.blob())
+      .then((blob) => {
         //const url = URL.createObjectURL(blob);
         fileSaver.saveAs(blob, 'document.pdf');
-
-    });
-
-
-
+      });
   }
-
-
 }
